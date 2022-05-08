@@ -4,17 +4,93 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Pets</title>
+    <title>Shelter Our pets page</title>
+    <link rel="stylesheet" href="../../assets/fonts/arial/stylesheet.css" />
+    <link rel="stylesheet" href="../../assets/fonts/georgia/stylesheet.css" />
+    <link rel="stylesheet" href="../../assets/styles/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="header">
-      <div class="wrapper"></div>
+      <div class="wrapper">
+        <div class="header__block">
+          <div class="header__logo">
+            <a href="../../pages/main/index.html" class="logo-link">
+              <h1 class="h1">Cozy House</h1>
+              <p class="logo-subtitle">Shelter for pets in Boston</p>
+            </a>
+          </div>
+          <nav class="header__navigation navigation">
+            <ul>
+              <li class="navigation__item">
+                <a href="../main/index.html">About the shelter</a>
+              </li>
+              <li class="navigation__item active">
+                <a href="../pets/index.html">Our pets</a>
+              </li>
+              <li class="navigation__item">
+                <a href="../main/index.html#help-shelter">Help the shelter</a>
+              </li>
+              <li class="navigation__item"><a href="#contacts">Contacts</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </header>
     <main class="main">
       <div class="wrapper"></div>
     </main>
-    <footer class="footer">
-      <div class="wrapper"></div>
+    <footer class="footer" id="contacts">
+      <div class="wrapper">
+        <div class="footer__block">
+          <div class="footer__widget">
+            <h3 class="h3 footer__h3">For questions and suggestions</h3>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a
+                  class="h4 footer__link link-mail"
+                  href="mailto:email@shelter.com"
+                  >email@shelter.com</a
+                >
+              </li>
+              <li class="footer__item">
+                <a class="h4 footer__link link-phone" href="tel:+136745677554"
+                  >+13 674 567 75 54</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer__widget footer__widget-second">
+            <h3 class="h3 footer__h3">We are waiting for your visit</h3>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a
+                  class="h4 footer__link link-location"
+                  href="https://www.google.com/maps/search/1+Central+Street,+Boston+(entrance+from+the+store)/@42.3145186,-71.1103678,11z"
+                  target="_blank"
+                  >1 Central Street, Boston (entrance from the store)</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  class="h4 footer__link link-location"
+                  href="https://www.google.com/maps/search/18+South+Park,+London/@51.4614345,-0.2479026,11z/data=!3m1!4b1"
+                  target="_blank"
+                  >18 South Park, London</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer__widget">
+            <div class="footer__image">
+              <img
+                src="../../assets/images/footer-puppy.png"
+                alt="footer puppy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
