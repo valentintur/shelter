@@ -23,13 +23,15 @@
           <nav class="header__navigation navigation">
             <ul>
               <li class="navigation__item">
-                <a href="../main/index.html">About the shelter</a>
+                <a href="../../pages/main/index.html">About the shelter</a>
               </li>
               <li class="navigation__item active">
-                <a href="../pets/index.html">Our pets</a>
+                <a href="../../pages/pets/index.html">Our pets</a>
               </li>
               <li class="navigation__item">
-                <a href="../main/index.html#help-shelter">Help the shelter</a>
+                <a href="../../pages/main/index.html#help-shelter"
+                  >Help the shelter</a
+                >
               </li>
               <li class="navigation__item"><a href="#contacts">Contacts</a></li>
             </ul>
@@ -140,7 +142,7 @@
               <article class="section-our-friends__slide-element slide-element">
                 <img
                   class="slide-element__image text-align-center"
-                  src="../../assets/images/pets-scarlett.png"
+                  src="../../assets/images/pets-scarlet.png"
                   alt="pet Scarlett"
                 />
                 <h4 class="h4 slide-element__title text-align-center">
@@ -170,28 +172,46 @@
                 </button>
               </article>
             </div>
-            <div class="section-our-friends__slides-navigation">
+            <div
+              class="
+                section-our-friends__slides-pagination
+                slides-pagination
+                text-align-center
+              "
+            >
               <button
                 type="button"
-                class="button-circle button-arrow button-arrow_back"
+                class="
+                  button-circle button-arrow
+                  slides-pagination__double-back
+                "
                 disabled
-              ></button>
-              <button
-                type="button"
-                class="button-circle button-arrow button-arrow_back"
-                disabled
-              ></button>
-              <button type="button" class="button-circle button-arrow">
-                1
+              >
+                &lt; &lt;
               </button>
               <button
                 type="button"
-                class="button-circle button-arrow button-arrow_back"
-              ></button>
+                class="button-circle button-arrow slides-pagination__back"
+                disabled
+              >
+                &lt;
+              </button>
+              <div class="button-circle pagination-number">1</div>
               <button
                 type="button"
-                class="button-circle button-arrow button-arrow_back"
-              ></button>
+                class="button-circle button-arrow slides-pagination__next"
+              >
+                &gt;
+              </button>
+              <button
+                type="button"
+                class="
+                  button-circle button-arrow
+                  slides-pagination__double-next
+                "
+              >
+                &gt; &gt;
+              </button>
             </div>
           </div>
         </div>
