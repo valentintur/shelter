@@ -186,6 +186,7 @@ a {
 }
 
 .pagination-number {
+    cursor: default;
     background-color: var(--color-primary);
 }
 
