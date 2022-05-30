@@ -618,3 +618,159 @@ a {
         padding-top: 13px;
     }
 }
+
+@media (max-width: 767.98px) {
+    .wrapper {
+        padding: 0 10px;
+    }
+    img {
+        max-width: 100%!important;
+    }
+
+    .h2, .h3 {
+        font-family: 'Georgia', sans-serif;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: 0.06em;
+        text-align: center;
+    }
+
+    .paragraph-l {
+        font-family: 'Arial', sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: justify;
+    }
+
+    .section-not-only__title .h2 {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .section-not-only__block .paragraph-l {
+        text-align: center;
+    }
+
+    .section-not-only__image-part {
+        margin-top: 5px;
+    }
+
+    .section-not-only__image-part img {
+        max-width: 100%;
+        max-height: 271px;
+        padding-top: 9;
+    }
+
+    .section-about__block {
+        padding: 28px 0 0;
+    }
+
+    .section-about__text-part .h3 {
+        max-width: 220px;
+        margin: 0 auto;
+    }
+
+    .section-about__text-part .paragraph-l {
+        max-width: 270px;
+        margin: 0 auto;
+        padding-bottom: 22px;
+    }
+
+    .section-about__image-part {
+        padding-top: 20px;
+    }
+    .section-about__image-part img {
+        max-height: 353px;
+    }
+
+    .section-our-friends__block {
+        padding: 80px 0 4px;
+    }
+
+    .section-our-friends__title {
+        padding-bottom: 42px;
+    }
+
+    .section-our-friends__slider {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px 80px;
+        padding-bottom: 42px;
+    }
+
+    .button-arrow_back {
+        order: 2;
+    }
+    .button-arrow_next {
+        order: 3;
+    }
+
+
+    .section-help__title {
+        padding-bottom: 42px;
+    }
+    .help-list {
+        gap: 30px;
+    }
+    .help-list__element {
+        min-width: 130px;
+    }
+    .help-list__element:nth-last-child(1) {
+        justify-self: flex-start;
+    }
+    .help-list__image {
+        width: 50px;
+        height: 50px;
+        padding-bottom: 20px;
+    }
+    .help-list__text.h4 {
+        font-family: 'Georgia', sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0.06em;
+        text-align: center;
+    }
+
+    .section-donation {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .section-donation__subtitle{
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: center;
+    }
+
+    .h4.credit-card__title {
+        font-size: 15px;
+    }
+
+    .section-donation__card-link {
+        margin: 0 auto 19px;
+    }
+
+    .section-donation__text-part .paragraph-s {
+        max-width: 280px;
+        text-align: justify;
+    }
+
+    .section-donation__image-part {
+        padding-top: 42px;
+    }
+
+    .section-donation__image-part img {
+        max-height: 135px;
+    }
+
+    .header__navigation.navigation {
+        display: none;
+    }
+    .section-our-friends__slide-element.slide-element:nth-last-child(2) {
+        display: none;
+    }
+    
+}
