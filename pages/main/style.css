@@ -735,6 +735,8 @@ a {
 
     .help-list__element:nth-last-child(1) {
         justify-self: flex-start;
+        margin-right: auto;
+        margin-left: 5px;
     }
 
     .help-list__image {
@@ -821,9 +823,10 @@ a {
 
     .footer__widget-second .footer__list .footer__item:last-child {
         margin-left: -28px;
+        padding-bottom: 45px;
     }
 
-    .footer__image {
+    .footer__image img {
         height: 269px;
     }
 }
