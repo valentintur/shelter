@@ -193,6 +193,10 @@ a {
 
 }
 
+.header__logo {
+    z-index: 100;
+}
+
 .logo-subtitle {
     font-family: Arial;
     font-size: 13px;
@@ -786,10 +790,6 @@ a {
         max-height: 135px;
     }
 
-    .header__navigation.navigation {
-        display: none;
-    }
-
     .section-our-friends__slide-element.slide-element:nth-last-child(2) {
         display: none;
     }
@@ -828,5 +828,110 @@ a {
 
     .footer__image img {
         height: 269px;
+    }
+}
+
+/* hamburder menu */
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    margin-right: 43px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: var(--color-primary);
+    position: absolute;
+    height: 2px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -10px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 10px;
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button {
+    transform: rotate(90deg);
+}
+
+@media (max-width: 767.98px) {
+
+    .menu-button-container {
+        display: flex;
+        position: relative;
+        z-index: 10;
+    }
+
+    ul.navigation-ul {
+        display: none;
+        position: absolute;
+        top: 0;
+        margin-top: 0;
+        right: 0;
+        flex-direction: column;
+        width: 320px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #menu-toggle~ul.navigation-ul li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #menu-toggle:checked~ul.navigation-ul {
+        display: flex;
+        height: 100vh;
+        padding-top: 67px;
+        padding-left: 0;
+        background-color: var(--color-dark-3xl);
+    }
+
+    #menu-toggle:checked~ul.navigation-ul li {
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        height: 60px;
+        padding-bottom: 32px;
+    }
+
+    #menu-toggle:checked~ul.navigation-ul li a {
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 51px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: var(--color-dark-s);
+    }
+
+    #menu-toggle:checked~ul.navigation-ul li.active a {
+        color: var(--color-light-s);
+    }
+
+}
+
+@media (min-width: 370px) and (max-width: 380px) {
+    #menu-toggle:checked~ul.navigation-ul {
+        padding-top: 22px !important;
     }
 }
