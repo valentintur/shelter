@@ -895,7 +895,7 @@ a {
         position: absolute;
         right: 53px;
         height: 58px;
-        z-index: 10;
+        z-index: 100;
     }
 
     #menu-toggle~.navigation__mobile ul.navigation-ul {
@@ -928,6 +928,7 @@ a {
         padding-top: 20px;
         padding-left: 0;
         background-color: var(--color-dark-3xl);
+        z-index: 10;
         transition: all .3s ease-out;
     }
 
