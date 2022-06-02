@@ -32,13 +32,10 @@ const moveLogoInsideMobileMenu = () => {
 
 const closeMobileMenu = () => {
     if (menuButtonElem.checked == 1) {
-        console.log('neponyatno 1');
         menuButtonElem.checked = false;
         headerBlockElem.prepend(headerLogoElem);
         document.body.style.overflow = 'auto';
         overlay.remove();
-        console.log('neponyatno 2');
-        //console.log('blabla');
     }
 }
 
