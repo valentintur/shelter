@@ -616,7 +616,7 @@ a {
 
     #menu-toggle~.navigation__mobile ul.navigation-ul  {
         display: flex;
-        position: absolute;
+        position: fixed;
         opacity: 0;
         top: 0;
         margin-top: 0;
@@ -626,7 +626,8 @@ a {
         height: 100vh;
         justify-content: center;
         align-items: center;
-        transition: all .5s ease-in;
+        transform: translateX(100%);
+        transition: all .3s ease-in;
     }
 
     #menu-toggle~.navigation__mobile ul.navigation-ul li {
@@ -646,6 +647,7 @@ a {
         padding-left: 0;
         background-color: var(--color-dark-3xl);
         z-index: 10;
+        transform: translateX(0);
         transition: all .3s ease-out;
     }
     
