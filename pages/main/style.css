@@ -672,6 +672,10 @@ a {
         margin: 0 auto;
     }
 
+    .section-not-only__paragraph {
+        max-width: 300px;
+    }
+
     .section-not-only__block .paragraph-l {
         text-align: center;
     }
