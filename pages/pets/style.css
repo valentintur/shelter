@@ -486,6 +486,20 @@ a {
         text-align: justify;
     }
 
+    .header__logo {
+        position: relative;
+    }
+
+    .navigation__mobile .header__logo {
+        position: absolute;
+        right: 124px;
+    }
+
+    .navigation__mobile .header__logo .h1, 
+    .navigation__mobile .header__logo .logo-subtitle {
+        color: var(--color-light-xl);
+    }
+
     .section-our-friends__block {
         padding: 42px 0;
     }
@@ -542,7 +556,7 @@ a {
     display: none;
     height: 100%;
     width: 30px;
-    margin-right: 43px;
+    margin-right: 0;
     cursor: pointer;
     flex-direction: column;
     justify-content: center;
@@ -590,7 +604,9 @@ a {
 
     .menu-button-container {
         display: flex;
-        position: relative;
+        position: absolute;
+        right: 53px;
+        height: 60px;
         z-index: 10;
     }
 
@@ -606,7 +622,7 @@ a {
         align-items: center;
     }
 
-    #menu-toggle~ul.navigation-ul li {
+    #menu-toggle~.navigation__mobile ul.navigation-ul li {
         height: 0;
         margin: 0;
         padding: 0;
@@ -614,21 +630,21 @@ a {
         transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
     }
 
-    #menu-toggle:checked~ul.navigation-ul {
+    #menu-toggle:checked~.navigation__mobile ul.navigation-ul {
         display: flex;
         height: 100vh;
-        padding-top: 67px;
+        padding-top: 20px;
         padding-left: 0;
         background-color: var(--color-dark-3xl);
     }
 
-    #menu-toggle:checked~ul.navigation-ul li {
+    #menu-toggle:checked~.navigation__mobile ul.navigation-ul li {
         transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
         height: 60px;
         padding-bottom: 32px;
     }
 
-    #menu-toggle:checked~ul.navigation-ul li a {
+    #menu-toggle:checked~.navigation__mobile ul.navigation-ul li a {
         font-size: 32px;
         font-weight: 400;
         line-height: 51px;
@@ -637,14 +653,8 @@ a {
         color: var(--color-dark-s);
     }
 
-    #menu-toggle:checked~ul.navigation-ul li.active a {
+    #menu-toggle:checked~.navigation__mobile ul.navigation-ul li.active a {
         color: var(--color-light-s);
     }
 
-}
-
-@media (min-width: 370px) and (max-width: 380px) {
-    #menu-toggle:checked~ul.navigation-ul {
-        padding-top: 22px !important;
-    }
 }
