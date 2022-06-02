@@ -938,9 +938,3 @@ a {
     }
 
 }
-
-/* @media (min-width: 370px) and (max-width: 380px) {
-    #menu-toggle:checked~.navigation__mobile ul.navigation-ul {
-        padding-top: 2px !important;
-    }
-} */
