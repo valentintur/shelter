@@ -2,18 +2,20 @@ const headerBlockElem = document.querySelector('.header__block');
 const headerLogoElem = document.querySelector('.header__logo');
 const navigationMobileElem = document.querySelector('.navigation__mobile');
 const menuButtonElem = document.querySelector('#menu-toggle');
-const overflow = document.createElement('div');
+const overlay = document.createElement('div');
+const linksElems = document.querySelectorAll('a');
 
 const createOverflowElem = () => {
-    overflow.classList.add('overflow');
-    overflow.style.width = '100%';
-    overflow.style.height = '100vh';
-    overflow.style.position = 'absolute';
-    overflow.style.top = '0';
-    overflow.style.backgroundColor = '#292929';
-    overflow.style.opacity = '0.6';
-    overflow.style.zIndex = '5';
-    document.body.prepend(overflow);
+    overlay.classList.add('overflow');
+    overlay.style.width = '100%';
+    overlay.style.height = '100vh';
+    overlay.style.position = 'absolute';
+    overlay.style.top = '0';
+    overlay.style.backgroundColor = '#292929';
+    overlay.style.opacity = '0.6';
+    overlay.style.zIndex = '5';
+    document.body.style.overflow = 'hidden';
+    document.body.prepend(overlay);
 }
 
 const moveLogoInsideMobileMenu = () => {
@@ -22,9 +24,26 @@ const moveLogoInsideMobileMenu = () => {
         createOverflowElem();
     } else {
         headerBlockElem.prepend(headerLogoElem);
-        overflow.remove()
+        document.body.style.overflow = 'auto';
+        overlay.remove();
     }
     
 }
 
-menuButtonElem.addEventListener('click', moveLogoInsideMobileMenu)
+const closeMobileMenu = () => {
+    if (menuButtonElem.checked == 1) {
+        console.log('neponyatno 1');
+        menuButtonElem.checked = false;
+        headerBlockElem.prepend(headerLogoElem);
+        document.body.style.overflow = 'auto';
+        overlay.remove();
+        console.log('neponyatno 2');
+        //console.log('blabla');
+    }
+}
+
+linksElems.forEach(e => {
+    e.addEventListener('click', closeMobileMenu)
+})
+menuButtonElem.addEventListener('click', moveLogoInsideMobileMenu);
+overlay.addEventListener('click', closeMobileMenu);
