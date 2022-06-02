@@ -659,6 +659,9 @@ a {
         text-align: justify;
     }
 
+    .section-not-only__title {
+        margin: 0 auto;
+    }
     .section-not-only__title .h2 {
         max-width: 200px;
         margin: 0 auto;
