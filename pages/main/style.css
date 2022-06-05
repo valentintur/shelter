@@ -362,6 +362,36 @@ a {
     background-color: var(--color-primary-light);
 }
 
+.section-our-friends__slide-element:nth-child(n + 4) {
+    display: none;
+}
+
+.modal-window {
+    display: none;
+}
+
+.modal-window.active {
+    position: fixed;
+    display: flex;
+    width: 900px;
+    height: 500px;
+    top: calc(50% - 250px);
+    left: calc(50% - 450px);
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.modal-window__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.modal-window__type-block {
+    display: flex;
+    flex-direction: row;
+}
+
 .section-help__block {
     padding-top: 42px;
     padding-bottom: 44px;
