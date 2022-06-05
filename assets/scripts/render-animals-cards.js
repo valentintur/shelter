@@ -25,7 +25,7 @@ export function renderAnimalCards () {
         document.querySelectorAll('.slide-element__image')[petIndex].src = data[petIndex].img;
         document.querySelectorAll('.slide-element__image')[petIndex].alt = data[petIndex].name;
         document.querySelectorAll('.slide-element__title')[petIndex].innerHTML = data[petIndex].name;
-        document.querySelectorAll('.button-animal')[petIndex].innerHTML = 'Learn More';
+        document.querySelectorAll('.button-animal')[petIndex].innerHTML = 'Learn more';
 
         
         document.querySelectorAll('.modal-window__close')[petIndex].innerHTML = 'close';
