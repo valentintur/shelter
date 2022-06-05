@@ -326,6 +326,32 @@ a {
     background-color: var(--color-primary-light);
 }
 
+.modal-window {
+    display: none;
+}
+
+.modal-window.active {
+    position: fixed;
+    display: flex;
+    width: 900px;
+    height: 500px;
+    top: calc(50% - 250px);
+    left: calc(50% - 450px);
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.modal-window__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.modal-window__type-block {
+    display: flex;
+    flex-direction: row;
+}
+
 /* Main classes */
 /* Main classes */
 
