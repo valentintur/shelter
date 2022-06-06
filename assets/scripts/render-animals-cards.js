@@ -9,18 +9,18 @@ export function renderAnimalCards () {
         renderHtml('h4', ['h4', 'slide-element__title', 'text-align-center'], '.section-our-friends__slide-element', petIndex);
         renderHtml('button', ['button', 'button-secondary', 'button-animal', 'text-align-center'], '.section-our-friends__slide-element', petIndex);
         renderHtml('div', ['modal-window'], '.section-our-friends__slide-element', petIndex);
-        renderHtml('button', ['modal-window__close'], '.modal-window', petIndex);
+        renderHtml('button', ['button-circle', 'button-arrow', 'modal-window__close'], '.modal-window', petIndex);
         renderHtml('div', ['modal-window__block'], '.modal-window', petIndex);
         renderHtml('img', ['modal-window__image'], '.modal-window__block', petIndex);
         renderHtml('div', ['modal-window__description'], '.modal-window__block', petIndex);
-        renderHtml('h3', ['modal-window__title'], '.modal-window__description', petIndex);
-        renderHtml('h4', ['modal-window__type-block'], '.modal-window__description', petIndex);
-        renderHtml('p', ['modal-window__description-text'], '.modal-window__description', petIndex);
+        renderHtml('h3', ['h3', 'modal-window__title'], '.modal-window__description', petIndex);
+        renderHtml('h4', ['h4', 'modal-window__type-block'], '.modal-window__description', petIndex);
+        renderHtml('p', ['h5', 'modal-window__description-text'], '.modal-window__description', petIndex);
         renderHtml('ul', ['modal-window__list'], '.modal-window__description', petIndex);
-        renderHtml('li', ['modal-window__list-item', 'age'], '.modal-window__list', petIndex);
-        renderHtml('li', ['modal-window__list-item', 'inoculations'], '.modal-window__list', petIndex);
-        renderHtml('li', ['modal-window__list-item', 'diseases'], '.modal-window__list', petIndex);
-        renderHtml('li', ['modal-window__list-item', 'parasites'], '.modal-window__list', petIndex);
+        renderHtml('li', ['h5', 'modal-window__list-item', 'age'], '.modal-window__list', petIndex);
+        renderHtml('li', ['h5', 'modal-window__list-item', 'inoculations'], '.modal-window__list', petIndex);
+        renderHtml('li', ['h5', 'modal-window__list-item', 'diseases'], '.modal-window__list', petIndex);
+        renderHtml('li', ['h5', 'modal-window__list-item', 'parasites'], '.modal-window__list', petIndex);
 
         document.querySelectorAll('.slide-element__image')[petIndex].src = data[petIndex].img;
         document.querySelectorAll('.slide-element__image')[petIndex].alt = data[petIndex].name;
@@ -28,10 +28,10 @@ export function renderAnimalCards () {
         document.querySelectorAll('.button-animal')[petIndex].innerHTML = 'Learn more';
 
         
-        document.querySelectorAll('.modal-window__close')[petIndex].innerHTML = 'close';
+        //document.querySelectorAll('.modal-window__close')[petIndex].innerHTML = 'close';
         document.querySelectorAll('.modal-window__image')[petIndex].src = data[petIndex].img;
         document.querySelectorAll('.modal-window__image')[petIndex].alt = data[petIndex].name;
-        document.querySelectorAll('.modal-window__title')[petIndex].alt = data[petIndex].name;
+        document.querySelectorAll('.modal-window__title')[petIndex].innerHTML = data[petIndex].name;
         document.querySelectorAll('.modal-window__type-block')[petIndex].innerHTML = `${data[petIndex].type} - ${data[petIndex].breed}`;
         document.querySelectorAll('.modal-window__description-text')[petIndex].innerHTML = data[petIndex].description;
         document.querySelectorAll('.age')[petIndex].innerHTML = `<span>Age</span>: ${data[petIndex].age}`;
@@ -40,15 +40,45 @@ export function renderAnimalCards () {
         document.querySelectorAll('.parasites')[petIndex].innerHTML = `<span>Parasites</span>: ${data[petIndex].parasites}`;
     }
 
+    const overlay = document.createElement('div');
+    const createOverflowElem = () => {
+        overlay.classList.add('overflow');
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.position = 'absolute';
+        overlay.style.top = '0';
+        overlay.style.backgroundColor = '#292929';
+        overlay.style.opacity = '0.6';
+        overlay.style.zIndex = '5';
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'relative';
+        document.body.prepend(overlay);
+    }
 
     function actionAnimalCards () {
         const buttonAnimalPopup = document.querySelectorAll('.section-our-friends__slide-element');
         const modalWindow = document.querySelectorAll('.modal-window'); 
         const modalWindowClose = document.querySelectorAll('.modal-window__close');
-        
+
+        overlay.addEventListener('mouseover', () => {
+            console.log('mouseover');
+            modalWindowClose.forEach(el => {
+                el.classList.add('active');
+            })      
+        })
+
+        modalWindow.forEach(el => {
+            el.addEventListener('mouseover', () => {
+                modalWindowClose.forEach(el => {
+                    el.classList.remove('active');
+                })      
+            })
+        })
+
         buttonAnimalPopup.forEach( (btnElem, btnIndex) => {
             btnElem.addEventListener('click', () => {
                 console.log('clock');
+                createOverflowElem();
                 modalWindow[btnIndex].classList.add('active');
             })
         })
@@ -56,9 +86,19 @@ export function renderAnimalCards () {
             btnElem.addEventListener('click', (el) => {
                 console.log('clock');
                 modalWindow[btnIndex].classList.remove('active');
+                document.body.style.overflow = 'auto';
+                overlay.remove();
                 el.stopPropagation();
             })
         })
+        overlay.addEventListener('click', () => {
+            modalWindow.forEach(el => {
+                el.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                overlay.remove();
+            })
+            
+        });
     }
     
     data.forEach( (el, index) => {
