@@ -9,13 +9,14 @@ export function mobileMenu () {
     const createOverflowElem = () => {
         overlay.classList.add('overflow');
         overlay.style.width = '100%';
-        overlay.style.height = '100vh';
+        overlay.style.height = '100%';
         overlay.style.position = 'absolute';
         overlay.style.top = '0';
         overlay.style.backgroundColor = '#292929';
         overlay.style.opacity = '0.6';
         overlay.style.zIndex = '5';
         document.body.style.overflow = 'hidden';
+        document.body.style.position = 'relative';
         document.body.prepend(overlay);
     }
     

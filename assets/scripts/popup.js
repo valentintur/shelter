@@ -11,6 +11,7 @@ export function renderPopUp () {
         document.querySelectorAll('.slide-element__image')[petIndex].alt = data[petIndex].name;
         document.querySelectorAll('.slide-element__title')[petIndex].innerHTML = data[petIndex].name;
         document.querySelectorAll('.button-animal')[petIndex].innerHTML = 'Learn More' + data[petIndex].name;
+        document.body.
     }
 
 }
