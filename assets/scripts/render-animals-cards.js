@@ -104,18 +104,21 @@ export function renderAnimalCards () {
         });
     }
     
-    
-
     if (window.location.href.indexOf('main') != -1) {
         data.forEach( (el, index) => {
                 renderPetCart(index, data, '.section-our-friends__slides');
         })
     } else if (window.location.href.indexOf('pets') != -1) {
-        paginationSlider().forEach( (el, index) => {
-                renderPetCart(index, paginationSlider(), '.section-our-friends__slides');
+        let bigArr = [];
+
+        while(bigArr.length < 6) {
+            bigArr.push( data.sort( () => Math.random() - 0.5) );
+        }
+        bigArr = bigArr.flat();
+        console.log(bigArr)
+        bigArr.forEach( (el, index) => {
+                renderPetCart(index, bigArr, '.section-our-friends__slides');
         })
-        //console.log(paginationSlider())
-        
     }
 
     actionAnimalCards();

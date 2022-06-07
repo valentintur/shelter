@@ -1,16 +1,23 @@
-import { data } from '../data/pets.js';
-
-
 export function paginationSlider() {
     const petsPaginationBlock = document.querySelector('#pets-pagination-block');
-    let bigArr = [];
+    const allSlides = petsPaginationBlock.querySelectorAll('.section-our-friends__slide-element');
+    console.log(allSlides);
 
-    for (let i = 0; i < 6; i++) {
-        bigArr.push(data.sort(() => Math.random()-0.5));
-        console.log(bigArr)
+    let numberOfActiveSlides = 0;
+
+    // for (let i = 0; i < allSlides.length; i++) {
+    //     if (allSlides[i].classList.contains('active')) {
+    //         previousArr.push(i); 
+    //     }
+    // }
+
+    if (window.innerWidth >= 1280 ) {
+        numberOfActiveSlides = 8;
+    } else if (window.innerWidth >= 768 && window.innerWidth < 1280) {
+        numberOfActiveSlides = 6;
+    } else {
+        numberOfActiveSlides = 3;
     }
-    bigArr = bigArr.flat();
-    //console.log(bigArr);
-    return bigArr;
+
 }
 

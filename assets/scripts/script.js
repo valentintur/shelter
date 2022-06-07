@@ -10,7 +10,7 @@ renderAnimalCards();
 if (window.location.href.indexOf('main') != -1) {
     randomSlider();
 } else {
-    //paginationSlider();
+    paginationSlider();
 }
 
 
