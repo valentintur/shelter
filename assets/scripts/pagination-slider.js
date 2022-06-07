@@ -21,7 +21,6 @@ export function paginationSlider() {
         numberOfActiveSlides = 3;
     }
 
-    ls
     let numberOfPages = allSlides.length / numberOfActiveSlides;
 
 
