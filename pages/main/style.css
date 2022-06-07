@@ -363,15 +363,21 @@ a {
 }
 
 .section-our-friends__slide-element {
-    display: none;
+    /* display: none; */
+    position: fixed;
+    opacity: 0;
+    left: 100px;
+    transition: left .5s;
+    z-index: -1;
 }
 
-/* .section-our-friends__slide-element.active:nth-child(n + 4) {
-    display: block;
-} */
 
 .section-our-friends__slide-element.active {
-    display: block;
+    /* display: block; */
+    position: relative;
+    opacity: 1;
+    left: 0;
+    z-index: auto;
 }
 
 
