@@ -2,10 +2,13 @@ import { data } from '../data/pets.js';
 
 export function paginationSlider() {
     const petsPaginationBlock = document.querySelector('#pets-pagination-block');
+    let bigArr = [];
 
-    petsPaginationBlock.addEventListener('click', () => {
-        console.log(data);
-    })
-    console.log(petsPaginationBlock)
+    for (let i = 0; i < 6; i++) {
+        bigArr.push(data.sort(()=>Math.random()-0.5));
+    }
+    bigArr = bigArr.flat();
+    console.log(bigArr)
+    
 }
 
