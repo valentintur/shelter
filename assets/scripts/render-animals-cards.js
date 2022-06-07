@@ -76,6 +76,9 @@ export function renderAnimalCards () {
         buttonAnimalPopup.forEach( (btnElem, btnIndex) => {
             btnElem.addEventListener('click', () => {
                 createOverflowElem();
+                console.log(btnIndex);
+                console.log(btnElem);
+                console.log(modalWindow[btnIndex])
                 modalWindow[btnIndex].classList.add('active');
             })
         })
