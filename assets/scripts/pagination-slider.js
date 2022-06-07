@@ -45,7 +45,7 @@ export function paginationSlider() {
         } 
         
         allSlides.forEach((el, index) => {
-            if ((index < (slidesPaginationNumber * numberOfActiveSlides)) && (index >= (slidesPaginationNumber * numberOfActiveSlides) - 8)) {
+            if ((index < (slidesPaginationNumber * numberOfActiveSlides)) && (index >= (slidesPaginationNumber * numberOfActiveSlides) - numberOfActiveSlides)) {
                 allSlides[index].classList.add('active');
             } else {
                 allSlides[index].classList.remove('active');
@@ -69,7 +69,7 @@ export function paginationSlider() {
         } 
         
         allSlides.forEach((el, index) => {
-            if ((index < (slidesPaginationNumber * numberOfActiveSlides)) && (index >= (slidesPaginationNumber * numberOfActiveSlides) - 8)) {
+            if ((index < (slidesPaginationNumber * numberOfActiveSlides)) && (index >= (slidesPaginationNumber * numberOfActiveSlides) - numberOfActiveSlides)) {
                 allSlides[index].classList.add('active');
             } else {
                 allSlides[index].classList.remove('active');
@@ -90,7 +90,7 @@ export function paginationSlider() {
         } 
         
         allSlides.forEach((el, index) => {
-            if ((index < (slidesPaginationNumber * numberOfActiveSlides)) && (index >= (slidesPaginationNumber * numberOfActiveSlides) - 8)) {
+            if ((index < (slidesPaginationNumber * numberOfActiveSlides)) && (index >= (slidesPaginationNumber * numberOfActiveSlides) - numberOfActiveSlides)) {
                 allSlides[index].classList.add('active');
             } else {
                 allSlides[index].classList.remove('active');
@@ -111,7 +111,7 @@ export function paginationSlider() {
         } 
         
         allSlides.forEach((el, index) => {
-            if ((index < (slidesPaginationNumber * numberOfActiveSlides)) && (index >= (slidesPaginationNumber * numberOfActiveSlides) - 8)) {
+            if ((index < (slidesPaginationNumber * numberOfActiveSlides)) && (index >= (slidesPaginationNumber * numberOfActiveSlides) - numberOfActiveSlides)) {
                 allSlides[index].classList.add('active');
             } else {
                 allSlides[index].classList.remove('active');
