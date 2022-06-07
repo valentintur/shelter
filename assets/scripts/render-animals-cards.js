@@ -1,5 +1,6 @@
 import {data} from '../data/pets.js';
 import {renderHtml} from './render-html.js';
+import { paginationSlider } from './pagination-slider.js';
 
 export function renderAnimalCards () {
 
@@ -38,6 +39,8 @@ export function renderAnimalCards () {
         document.querySelectorAll('.inoculations')[petIndex].innerHTML = `<span>Inoculations</span>: ${data[petIndex].inoculations}`;
         document.querySelectorAll('.diseases')[petIndex].innerHTML = `<span>Diseases</span>: ${data[petIndex].diseases}`;
         document.querySelectorAll('.parasites')[petIndex].innerHTML = `<span>Parasites</span>: ${data[petIndex].parasites}`;
+        //console.log(data[petIndex])
+        //console.log(petIndex)
     }
 
     const overlay = document.createElement('div');
@@ -101,9 +104,21 @@ export function renderAnimalCards () {
         });
     }
     
-    data.forEach( (el, index) => {
-        renderPetCart(index, data, '.section-our-friends__slides');
-    })
+    
+
+    if (window.location.href.indexOf('main') != -1) {
+        data.forEach( (el, index) => {
+                renderPetCart(index, data, '.section-our-friends__slides');
+        })
+    } else if (window.location.href.indexOf('pets') != -1) {
+        paginationSlider().forEach( (el, index) => {
+                renderPetCart(index, paginationSlider(), '.section-our-friends__slides');
+        })
+        //console.log(paginationSlider())
+        
+    }
+
     actionAnimalCards();
 
 }
+
