@@ -1,6 +1,7 @@
 import {data} from '../data/pets.js';
 import {renderHtml} from './render-html.js';
 import { paginationSlider } from './pagination-slider.js';
+import { createBigArr } from './create-big-arr.js';
 
 export function renderAnimalCards () {
 
@@ -27,9 +28,6 @@ export function renderAnimalCards () {
         document.querySelectorAll('.slide-element__image')[petIndex].alt = data[petIndex].name;
         document.querySelectorAll('.slide-element__title')[petIndex].innerHTML = data[petIndex].name;
         document.querySelectorAll('.button-animal')[petIndex].innerHTML = 'Learn more';
-
-        
-        //document.querySelectorAll('.modal-window__close')[petIndex].innerHTML = 'close';
         document.querySelectorAll('.modal-window__image')[petIndex].src = data[petIndex].img;
         document.querySelectorAll('.modal-window__image')[petIndex].alt = data[petIndex].name;
         document.querySelectorAll('.modal-window__title')[petIndex].innerHTML = data[petIndex].name;
@@ -39,8 +37,6 @@ export function renderAnimalCards () {
         document.querySelectorAll('.inoculations')[petIndex].innerHTML = `<span>Inoculations</span>: ${data[petIndex].inoculations}`;
         document.querySelectorAll('.diseases')[petIndex].innerHTML = `<span>Diseases</span>: ${data[petIndex].diseases}`;
         document.querySelectorAll('.parasites')[petIndex].innerHTML = `<span>Parasites</span>: ${data[petIndex].parasites}`;
-        //console.log(data[petIndex])
-        //console.log(petIndex)
     }
 
     const overlay = document.createElement('div');
@@ -64,7 +60,6 @@ export function renderAnimalCards () {
         const modalWindowClose = document.querySelectorAll('.modal-window__close');
 
         overlay.addEventListener('mouseover', () => {
-            console.log('mouseover');
             modalWindowClose.forEach(el => {
                 el.classList.add('active');
             })      
@@ -80,14 +75,12 @@ export function renderAnimalCards () {
 
         buttonAnimalPopup.forEach( (btnElem, btnIndex) => {
             btnElem.addEventListener('click', () => {
-                console.log('clock');
                 createOverflowElem();
                 modalWindow[btnIndex].classList.add('active');
             })
         })
         modalWindowClose.forEach( (btnElem, btnIndex) => {
             btnElem.addEventListener('click', (el) => {
-                console.log('clock');
                 modalWindow[btnIndex].classList.remove('active');
                 document.body.style.overflow = 'auto';
                 overlay.remove();
@@ -103,22 +96,31 @@ export function renderAnimalCards () {
             
         });
     }
-    
+     
     if (window.location.href.indexOf('main') != -1) {
         data.forEach( (el, index) => {
                 renderPetCart(index, data, '.section-our-friends__slides');
         })
     } else if (window.location.href.indexOf('pets') != -1) {
-        let bigArr = [];
+        
+        // let bigArr = [];
 
-        while(bigArr.length < 6) {
-            bigArr.push( data.sort( () => Math.random() - 0.5) );
-        }
-        bigArr = bigArr.flat();
-        console.log(bigArr)
-        bigArr.forEach( (el, index) => {
-                renderPetCart(index, bigArr, '.section-our-friends__slides');
+        // for (let i = 0; i < 6; i++) {
+        //     let tempArr = data.sort( () => { return Math.random() - 0.5 + (i * 0.01) });
+        //     bigArr.push(tempArr);
+        // }
+
+        // bigArr = bigArr.flat();
+
+        // bigArr.forEach( (el, index) => {
+        //         renderPetCart(index, bigArr, '.section-our-friends__slides');
+        // })
+
+        createBigArr()
+        createBigArr().forEach( (el, index) => {
+                renderPetCart(index, createBigArr(), '.section-our-friends__slides');
         })
+
     }
 
     actionAnimalCards();
